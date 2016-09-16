@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+		<link href="Design.css" rel="stylesheet" type="text/css"/>
+				<link href="listdesign.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	    <script src="Tja.js"></script>
+	        <script src="cool.js"></script>
+	    <script src="jquery-1.11.1.min.js"></script>
+	    
+	    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<div id="banner">
+			</div>
+	
+	<div id="meny">
+<nav>
+		<ul>
+<li><a href="index.html">Start</a></li>
+<li><a href="Om.html">Om</a></li>
+<li><a href="Bokning.html">Bokning</a></li>
+<li><a href="Medlem.html">Medlem</a>
+<ul>
+	<li><a href="Registrering.html">Registrera</a></li>
+</ul>
+</li>
+<li><a href="Kontakt.html">Kontakt</a></li>
+<li><a href="Seartch.html">Sök</a></li>
+
+</ul>
+</div>
+</nav>
+
+
+
+<div id="innehall">
+
+	<form name="Kontakt" action="Kontakt.html" method="post"id="Kontakt">
+<fieldset>
+	<legend><h3>Kontakt</h3></legend>
+	<br><br><br><br>
+        <label for="name"><b>Förnamn:</b></label> 
+	 <br><br><br><br>
+	<input type="text" name="Fnamn" onkeyup="checkLength(this,2,15)"
+	/>*
+	<br><br><br><br>
+	<label for="name"><b>Efternamn:</b></label> 
+	<br><br><br><br>
+	<input type="text" name="Enamn" onkeyup="checkLength(this,2,15)"/>*
+	<br><br><br><br>
+	<label for="name"><b>Telefon:</b></label> 
+	<br><br><br><br>
+	<input type="text" name="Telefon" id="telefon" onblur="validatenumber(telefon);">*
+  <br><br>
+  <label for="name"><b>Email:</b></label> 
+  <br><br><br><br>
+  <input type="text" name="email" id="email">*     
+
+	<br><br>
+	<input type="submit" value="Submit" onclick="validateKontakt();" />
+	</fieldset>
+</form> 
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+	</html>
