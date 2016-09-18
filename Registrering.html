@@ -1,94 +1,94 @@
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
- <html>                                                                                                                                                
+<html>
 <head>
     <link href="Design.css" rel="stylesheet" type="text/css"/>
-        <link href="listdesign.css" rel="stylesheet" type="text/css"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="listdesign.css" rel="stylesheet" type="text/css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-      <script src="Tja.js"></script>
-       <script src="cool.js"></script>
-      <script src="jquery-1.11.1.min.js"></script>
-      
-      <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-  </head>                                                                                                                                             
- <body>  
-    <div id="wrapper">
-      <div id="banner">
-      </div>
-  
-  <div id="meny">
-<nav>
-    <ul>
-<li><a href="index.html">Start</a></li>
-<li><a href="Om.html">Om</a></li>
-<li><a href="Bokning.html">Bokning</a></li>
-<li><a href="Medlem.html">Medlem</a>
-<ul>
-  <li><a href="Registrering.html">Registrera</a></li>
-</ul>
-</li>
-<li><a href="Kontakt.html">Kontakt</a></li>
-<li><a href="Seartch.html">Sök</a></li>
+    <script src="Tja.js"></script>
+    <script src="cool.js"></script>
+    <script src="jquery-1.11.1.min.js"></script>
 
-</ul>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="banner">
+    </div>
+
+    <div id="meny">
+        <nav>
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li><a href="Om.html">Om</a></li>
+                <li><a href="Bokning.html">Bokning</a></li>
+                <li><a href="Medlem.html">Medlem</a>
+                    <ul>
+                        <li><a href="Registrering.html">Registrera</a></li>
+                    </ul>
+                </li>
+                <li><a href="Kontakt.html">Kontakt</a></li>
+                <li><a href="Seartch.html">Sök</a></li>
+
+            </ul>
+    </div>
+    </nav>
+    <div id="innehall">
+
+        <fieldset>
+            <table>
+                <legend><h3>Registrering</h3></legend>
+                <tr>
+                    <td><label for="name"><b>ID:</b></label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="customerID" name="ID"/></td>
+                    <td>*</td>
+                </tr>
+                <td><label for="name"><b>Förnamn:</b></label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="firstname" name="Fnamn" onkeyup="checkLength(this,2,15)"
+                    /></td> <td>*</td>
+                </tr>
+                <tr>
+                    <td><label for="name"><b>Efternamn:</b></label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="lastname" name="Enamn"  onkeyup="checkLength(this,2,15)"/></td>
+                    <td>*</td>
+                </tr>
+                <tr>
+                    <td><label for="name"><b>Email:</b></label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="email" id="email" /></td><td>*</td>
+                </tr>
+                <tr>
+                    <td><label for="name"><b>Address:</b></label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="address" name="Adress"/></td>
+                    <td>*</td>
+                </tr>
+
+
+
+                <tr>
+                    <td>  <input type="Submit" value="Submit" onclick="storeCustomer();validateForm();"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+
+
+    </div>
 </div>
-</nav>     
-<div id="innehall">    
-  
-<fieldset>
-  <table>
-  <legend><h3>Registrering</h3></legend>
-  <tr>
-     <td><label for="name"><b>ID:</b></label></td>
-  </tr> 
-  <tr>
-    <td><input type="text" id="customerID" name="ID"/></td>
-     <td>*</td>
-  </tr> 
-    <td><label for="name"><b>Förnamn:</b></label></td>
-  </tr> 
-  <tr>
-    <td><input type="text" id="firstname" name="Fnamn" onkeyup="checkLength(this,2,15)"
-    /></td> <td>*</td>
-  </tr> 
-  <tr>
-    <td><label for="name"><b>Efternamn:</b></label></td>
-  </tr> 
-  <tr>
-  <td><input type="text" id="lastname" name="Enamn"  onkeyup="checkLength(this,2,15)"/></td>
-  <td>*</td>
-  </tr>
-  <tr>
- <td><label for="name"><b>Email:</b></label></td> 
-  </tr>
-  <tr>
-    <td><input type="text" name="email" id="email" /></td><td>*</td>
-  </tr>
-  <tr>
-    <td><label for="name"><b>Address:</b></label></td> 
-  </tr>
-  <tr>
-  <td><input type="text" id="address" name="Adress"/></td>
-    <td>*</td>
- </tr>
-
-
-  
-<tr>
-   <td>  <input type="Submit" value="Submit" onclick="storeCustomer();validateForm();"></td>
- </tr>
-</table>
-  </fieldset>
-
-                                                                                                                                   
-   
-   </div>
-     </div>                                                                                                                                         
- </body>                                                                                                                                               
- </html>               
+</body>
+</html>
 
 
 

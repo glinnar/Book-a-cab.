@@ -1,90 +1,90 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html>
 <head>
     <link href="Design.css" rel="stylesheet" type="text/css"/>
-        <link href="listdesign.css" rel="stylesheet" type="text/css"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <link href="listdesign.css" rel="stylesheet" type="text/css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 
-      <script src="Tja.js"></script>
-        <script src="cool.js"></script>
-      <script src="jquery-1.11.1.min.js"></script>
-      
-      <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<script >
-  $(function() {
- $( "#date" ).datepicker({dateFormat: 'yy-mm-dd'});
-});
+    <script src="Tja.js"></script>
+    <script src="cool.js"></script>
+    <script src="jquery-1.11.1.min.js"></script>
 
-</script>
-  </head>
-  <body onload="Medlemssida();getName();uppdateraKundvagn();">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script >
+        $(function() {
+            $( "#date" ).datepicker({dateFormat: 'yy-mm-dd'});
+        });
 
-    <div id="wrapper">
-      <div id="banner">
-      </div>
-  
-  <div id="meny">
-<nav>
-    <ul>
-<li><a href="index.html">Start</a></li>
-<li><a href="Om.html">Om</a></li>
-<li><a href="#">Bokning</a></li>
-<li><a href="Medlem.html">Medlem</a>
-<ul>
+    </script>
+</head>
+<body onload="Medlemssida();getName();uppdateraKundvagn();">
 
-  <li><a href="Registrering.html">Registrera</a></li>
-</ul>
-</li>
-<li><a href="Kontakt.html">Kontakt</a></li>
-<li><a href="Seartch.html">Sök</a></li>
+<div id="wrapper">
+    <div id="banner">
+    </div>
 
-</ul>
-</div>
-</nav>
+    <div id="meny">
+        <nav>
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li><a href="Om.html">Om</a></li>
+                <li><a href="#">Bokning</a></li>
+                <li><a href="Medlem.html">Medlem</a>
+                    <ul>
 
+                        <li><a href="Registrering.html">Registrera</a></li>
+                    </ul>
+                </li>
+                <li><a href="Kontakt.html">Kontakt</a></li>
+                <li><a href="Seartch.html">Sök</a></li>
 
-
-<div id="innehall">
-  <div id="kundvagn">
-    <br>
-    <br>
-    <span id="Kundvagn"></span>
-</div>
-
- <table>
-  <legend><h3>Boka Taxi</h3></legend>
-  <tr>
-     <td><label for="name"><b>Kund:</b></label></td>
-  </tr> 
-  <tr>
-    <td><input type="text" placeholder="" id="resource" name="ID" disabled="disabled"/></td>
-     <td>*</td>
-  </tr> 
-  <tr>
-    <td><label for="name"><b>Datum:</b></label></td>
-  </tr> 
-  <tr>
-  <td><input type="text" id="date" name="datepicker" onchange="processinputbox();getCustomer();"/></td>
-  <td>*</td>
-</table>
-<br>
- <div id="OutputDiv">  
+            </ul>
+    </div>
+    </nav>
 
 
-</div>
+
+    <div id="innehall">
+        <div id="kundvagn">
+            <br>
+            <br>
+            <span id="Kundvagn"></span>
+        </div>
+
+        <table>
+            <legend><h3>Boka Taxi</h3></legend>
+            <tr>
+                <td><label for="name"><b>Kund:</b></label></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="" id="resource" name="ID" disabled="disabled"/></td>
+                <td>*</td>
+            </tr>
+            <tr>
+                <td><label for="name"><b>Datum:</b></label></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="date" name="datepicker" onchange="processinputbox();getCustomer();"/></td>
+                <td>*</td>
+        </table>
+        <br>
+        <div id="OutputDiv">
 
 
+        </div>
 
 
 
 
-</div>
+
+
+    </div>
 
 
 
-  </body>
-  </html>
+</body>
+</html>

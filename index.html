@@ -1,145 +1,145 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html>
 <head>
-		<link href="Design.css" rel="stylesheet" type="text/css"/>
-				<link href="listdesign.css" rel="stylesheet" type="text/css"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="Design.css" rel="stylesheet" type="text/css"/>
+	<link href="listdesign.css" rel="stylesheet" type="text/css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	    <script src="Tja.js"></script>
-	        <script src="cool.js"></script>
-	           <script src="klocka.js"></script>
-	    <script src="jquery-1.11.1.min.js"></script>
-	    
-	    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="Tja.js"></script>
+	<script src="cool.js"></script>
+	<script src="klocka.js"></script>
+	<script src="jquery-1.11.1.min.js"></script>
 
-
-	</head>
-	<body>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 
-		<div id="wrapper">
-			
-			<div id="banner">
-			</div>
+</head>
+<body>
+
+
+<div id="wrapper">
+
+	<div id="banner">
+	</div>
 
 	<div id="meny">
-<nav>
-		<ul>
-<li><a href="index.html">Start</a></li>
-<li><a href="Om.html">Om</a></li>
-<li><a href="Bokning.html">Bokning</a></li>
-<li><a href="Medlem.html">Medlem</a>
-<ul>
-	<li><a href="Registrering.html">Registrera</a></li>
-</ul>
-</li>
-<li><a href="Kontakt.html">Kontakt</a></li>
-<li><a href="Seartch.html">Sök</a></li>
+		<nav>
+			<ul>
+				<li><a href="index.html">Start</a></li>
+				<li><a href="Om.html">Om</a></li>
+				<li><a href="Bokning.html">Bokning</a></li>
+				<li><a href="Medlem.html">Medlem</a>
+					<ul>
+						<li><a href="Registrering.html">Registrera</a></li>
+					</ul>
+				</li>
+				<li><a href="Kontakt.html">Kontakt</a></li>
+				<li><a href="Seartch.html">Sök</a></li>
 
-</ul>
-</div>
-</nav>
+			</ul>
+	</div>
+	</nav>
 
-<div id="innehall">
-	
-	
-<h1>Välkommen
-</h1>
+	<div id="innehall">
 
-<p>
-	Hej och välkommen till Taxbil.se om du redan är medlem så vänligen logga in för att boka en bil.</p><p>
-Om du är ny kund vänligen registrera dig först och sedan gå vidare till boknings sidan. </p><p>
 
-Ha det gött</p><p>
+		<h1>Välkommen
+		</h1>
 
-// VD Taxikung - Taxibilar.se
+		<p>
+			Hej och välkommen till Taxbil.se om du redan är medlem så vänligen logga in för att boka en bil.</p><p>
+		Om du är ny kund vänligen registrera dig först och sedan gå vidare till boknings sidan. </p><p>
+
+		Ha det gött</p><p>
+
+		// VD Taxikung - Taxibilar.se
 	</p></p>
-	<br>
+		<br>
 
-	<canvas id="myCanvas" width="660" height="345" style="border:1px solid #000000; background-color: #FFFFFF">
-Your browser does not support the HTML5 canvas tag.
-</canvas>
-
-  
-    <script>
-      window.requestAnimFrame = (function(callback) {
-        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-        function(callback) {
-          window.setTimeout(callback, 1000 / 60);
-        };
-      })();
-
-      function drawRectangle(myRectangle, context) {
-        context.beginPath();
-        context.rect(myRectangle.x, myRectangle.y, myRectangle.width, myRectangle.height);
-        context.fillStyle = '#003366';
-        context.fill();
-        context.lineWidth = myRectangle.borderWidth;
-        context.strokeStyle = 'black';
-        context.stroke();
-      }
-      function animate(myRectangle, canvas, context, startTime) {
-        // update
-        var time = (new Date()).getTime() - startTime;
-
-        var linearSpeed = 100;
-        // pixels / second
-        var newX = linearSpeed * time / 1000;
-
-        if(newX < canvas.width - myRectangle.width - myRectangle.borderWidth / 2) {
-          myRectangle.x = newX;
-        }
-
-        // clear
-        context.clearRect(0, 0, canvas.width, canvas.height);
-
-        drawRectangle(myRectangle, context);
-
-        // request new frame
-        requestAnimFrame(function() {
-          animate(myRectangle, canvas, context, startTime);
-        });
-      }
-      var canvas = document.getElementById('myCanvas');
-      var context = canvas.getContext('2d');
+		<canvas id="myCanvas" width="660" height="345" style="border:1px solid #000000; background-color: #FFFFFF">
+			Your browser does not support the HTML5 canvas tag.
+		</canvas>
 
 
-      var myRectangle = {
-        x: 0,
-        y: 75,
-        width: 100,
-        height: 50,
-        borderWidth: 5
-      };
+		<script>
+			window.requestAnimFrame = (function(callback) {
+				return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+						function(callback) {
+							window.setTimeout(callback, 1000 / 60);
+						};
+			})();
 
-      drawRectangle(myRectangle, context);
+			function drawRectangle(myRectangle, context) {
+				context.beginPath();
+				context.rect(myRectangle.x, myRectangle.y, myRectangle.width, myRectangle.height);
+				context.fillStyle = '#003366';
+				context.fill();
+				context.lineWidth = myRectangle.borderWidth;
+				context.strokeStyle = 'black';
+				context.stroke();
+			}
+			function animate(myRectangle, canvas, context, startTime) {
+				// update
+				var time = (new Date()).getTime() - startTime;
 
-      // wait one second before starting animation
-      setTimeout(function() {
-        var startTime = (new Date()).getTime();
-        animate(myRectangle, canvas, context, startTime);
-      }, 1000);
-    </script>
- 
+				var linearSpeed = 100;
+				// pixels / second
+				var newX = linearSpeed * time / 1000;
+
+				if(newX < canvas.width - myRectangle.width - myRectangle.borderWidth / 2) {
+					myRectangle.x = newX;
+				}
+
+				// clear
+				context.clearRect(0, 0, canvas.width, canvas.height);
+
+				drawRectangle(myRectangle, context);
+
+				// request new frame
+				requestAnimFrame(function() {
+					animate(myRectangle, canvas, context, startTime);
+				});
+			}
+			var canvas = document.getElementById('myCanvas');
+			var context = canvas.getContext('2d');
+
+
+			var myRectangle = {
+				x: 0,
+				y: 75,
+				width: 100,
+				height: 50,
+				borderWidth: 5
+			};
+
+			drawRectangle(myRectangle, context);
+
+			// wait one second before starting animation
+			setTimeout(function() {
+				var startTime = (new Date()).getTime();
+				animate(myRectangle, canvas, context, startTime);
+			}, 1000);
+		</script>
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
 
 
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-	</body>
+</body>
 </html>
