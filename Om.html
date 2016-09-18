@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html>
 <head>
 	<link href="Design.css" rel="stylesheet" type="text/css"/>
@@ -15,12 +14,9 @@
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 </head>
 <body>
-
 <div id="wrapper">
-
 	<div id="banner">
 	</div>
-
 	<div id="meny">
 		<nav>
 			<ul>
@@ -34,23 +30,18 @@
 				</li>
 				<li><a href="Kontakt.html">Kontakt</a></li>
 				<li><a href="Seartch.html">Sök</a></li>
-
 			</ul>
 	</div>
 	</nav>
 
 	<div id="innehall">
-
 		<h1> Om oss</h1>
 		<p>
-
-			Företaget Taxibil skapades förs år 1970 och har sen dess fortsatt köra taxi i Göteborg.
-
+			Företaget Taxibil skapades först år 1970 och har sen dess fortsatt köra taxi i Göteborg.
 		</p>
 		<img src="Bilder/taxi.jpg"  id="taxiImage"width="640" height="280"/>
 		<canvas id="a" width="170" height="170" ></canvas>
 		<script>
-
 			var canvas,
 					context,
 					taxiImage,
@@ -77,7 +68,6 @@
 				if(magnification<10) magnification=10;
 				drawMagnification(event);
 			}
-
 			function drawMagnification(event){
 				//Get mouse position
 				var positionOfTheGardenImageElement=findPos(event.target); //event.target is the image
@@ -113,7 +103,6 @@
 				canvas.style.left=canvasx+"px";
 				canvas.style.top=canvasy+"px";
 			}
-
 			//Finds the position of any DOM element in the document by recursion - should work in most modern browsers
 			function findPos(obj) {
 				var curleft = curtop = 0;
@@ -127,9 +116,7 @@
 				}
 				return {x:curleft, y:curtop} //Returns the position of the element as an object
 			}
-
 		</script>
-
 	</div>
 </div>
 </body>

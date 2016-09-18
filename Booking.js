@@ -1,10 +1,8 @@
-
 var isvalid=false;
 var size=0;
 
-// lagarar kund
-function storeCustomer()
-{
+// Store customer
+function storeCustomer(){
     var customerID=document.getElementById("customerID").value;
     var firstname=document.getElementById("firstname").value;
     var lastname=document.getElementById("lastname").value;
@@ -23,23 +21,16 @@ function storeCustomer()
         success:  ResultCustomer
     });
 }
-// Returnerar kund
-function ResultCustomer(returnedData)
-{
+// Resturns Customer
+function ResultCustomer(returnedData){
     // Iterate over all nodes in root node (i.e. the 'created' element in root which has an attribute called status)
     for (i = 0; i < returnedData.childNodes.length; i++) {
         if(returnedData.childNodes.item(i).nodeName=="created"){
-
             alert("user is created");
-
-
         }
-
     }
 }
-
-
-// låter användaren logga in
+// Allow the user to log in
 function userLogin(){
     if(!!$("#login").val()){
         customerID = $("#login").val();
@@ -53,9 +44,7 @@ function userLogin(){
         success:  ResultCustomerID
     });
 }
-
-function ResultCustomerID(returnedData)
-{
+function ResultCustomerID(returnedData){
     var resultset=returnedData.childNodes[0];
     for (i = 0; i < resultset.childNodes.length; i++) {
         if(resultset.childNodes.item(i).nodeName=="customer"){
@@ -65,7 +54,7 @@ function ResultCustomerID(returnedData)
         }
     }
     // No user was found, display error.
-    if(!userfound) {
+    if(!userfound){
         alert("kom ej in");
     }
     // User was found, store session
@@ -75,36 +64,28 @@ function ResultCustomerID(returnedData)
         window.location.href = "Medlem.html";
     }
 }
-// Medlemssidan
+// Memberpage
 function Medlemssida(){
-
     var user = sessionStorage.getItem("username");
     if(user != null){
         $("h1#message").html(' Välkommen '+ user);
     } else{
         window.location.href = "Login.html";
     }
-
-
 }
-// Loggar ut 
-function Logout() {
+// Logs out
+function Logout(){
     sessionStorage.clear();
     window.location.href = "index.html";
     uppdateraKundvagn();
 }
-// Bokar plats i resursen
-function bookPosition(position)
-
-{
+// Booking a date
+function bookPosition(position){
     var rebate=0;
     var resource="Taxibil";
     var bookingdate=document.getElementById("date").value;
     var customer=sessionStorage.getItem("username");
     var status = 1;
-
-
-
 
     $.ajax({
         type: 'POST',
@@ -123,28 +104,25 @@ function bookPosition(position)
         success:  bookingmade,
         error: errormsg
     });
-}    // Bokning klar
-function bookingmade(returnedData)
-{
+}    // Booking done
+function bookingmade(returnedData){
     uppdateraKundvagn();
     alert('Bil bokad!');
     processinputbox();
     getCustomer();
 
 }
-function errormsg(jqXHR,textStatus,errorThrown) {
+function errormsg(jqXHR,textStatus,errorThrown){
     alert(jqXHR.responseText);
 }
 
-// Häntar användarnamn
+// Gets username
 function getName(){
-
     var customer=sessionStorage.getItem("username");
     $('#resource').attr('placeholder',customer);
 }
-// Rutnätet där man kan trycka för att boka bil.
-function drawResult()
-{
+// The grid for booking a cab
+function drawResult(){
     // Use size from initial ajax call
     // Generate Table including booking Javascript calls
     var output="<table border='1'class='tablestuff' >";
@@ -161,7 +139,6 @@ function drawResult()
                 }
             }
         }
-
         if(matched){
             output+="<td bgcolor='#ffeedd'>  </td>";
         }else{
@@ -169,23 +146,19 @@ function drawResult()
         }
         if(i%4==3) output+="</tr><tr>";
     }
-
     output+="</tr>";
     output+="</table>"
     var div=document.getElementById('OutputDiv');
     div.innerHTML=output;
 }
-function ResultBooking(returnedData)
-{
+function ResultBooking(returnedData){
     // An XML DOM document is returned from AJAX
     resultset=returnedData.childNodes[0];
     isvalid=true;
 
     drawResult();
 }
-
-function ResultSize(returnedData)
-{
+function ResultSize(returnedData){
     // An XML DOM document is returned from AJAX
     var resultsetsize=returnedData.childNodes[0];
 
@@ -198,9 +171,8 @@ function ResultSize(returnedData)
     }
 }
 
-// Hämtar bokningar och resurser
-function processinputbox()
-{
+// Gets Bookings and resources
+function processinputbox(){
     resource= "Taxibil";
     bookingdate=document.getElementById("date").value;
 
@@ -210,7 +182,6 @@ function processinputbox()
         data: { resourceID: resource},
         success:  ResultSize
     });
-
 
     $.ajax({
         type: 'POST',
@@ -224,10 +195,7 @@ function processinputbox()
         success:  ResultBooking
     });
 }
-
-
-function ResultBookingCustomer(returnedData)
-{
+function ResultBookingCustomer(returnedData){
     // An XML DOM document is returned from AJAX                                                                                                       
     var resultset=returnedData.childNodes[0];
 
@@ -255,8 +223,7 @@ function ResultBookingCustomer(returnedData)
     div.innerHTML=output;
 }
 // Hämtar kundbokningar
-function getCustomer()
-{
+function getCustomer(){
     customer =document.getElementById("customerID").value;
     $.ajax({
         type: 'POST',
